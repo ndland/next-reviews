@@ -6,8 +6,12 @@ module.exports = {
     "./components/**/*.{jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ["var(--font-work-sans)", "sans-serif"],
+        "roboto-slab": ["var(--font-roboto-slab)", "sans-serif"],
+      },
+    },
   },
-  plugins: [],
-}
-
+  plugins: [require("@tailwindcss/typography")],
+};

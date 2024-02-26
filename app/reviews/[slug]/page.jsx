@@ -10,7 +10,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params: { slug } }) {
   const review = await getReview(slug);
   return {
-    title: review.title
+    title: review.title,
   };
 }
 
@@ -19,8 +19,8 @@ export default async function ReviewPage({ params: { slug } }) {
   return (
     <>
       <Heading>{title}</Heading>
-      <div className="flex gap-3 items-baseline">
-        <p className="italic pb-2">{date}</p>
+      <div className="flex items-baseline gap-3">
+        <p className="pb-2 italic">{date}</p>
         <ShareLinkButton />
       </div>
       <img
@@ -32,7 +32,7 @@ export default async function ReviewPage({ params: { slug } }) {
       />
       <article
         dangerouslySetInnerHTML={{ __html: body }}
-        className="max-w-screen-sm prose prose-slate"
+        className="prose prose-slate max-w-screen-sm"
       />
     </>
   );

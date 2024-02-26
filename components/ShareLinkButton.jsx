@@ -13,8 +13,10 @@ export default function ShareLinkButton() {
   };
 
   return (
-    <button onClick={handleClick}
-            className="border flex gap-1 items-center px-2 py-1 text-slate-500 text-sm hover:bg-orange-100 hover:text-slate-700">
+    <button
+      onClick={handleClick}
+      className="flex items-center gap-1 border px-2 py-1 text-sm text-slate-500 hover:bg-orange-100 hover:text-slate-700"
+    >
       <LinkIcon className="h-4 w-4" />
       {clicked ? 'Link Copied' : 'Share Link'}
     </button>
